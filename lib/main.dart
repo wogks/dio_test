@@ -20,9 +20,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +39,7 @@ class MyHomePage extends StatelessWidget {
           ElevatedButton(onPressed: () =>Server().getReqWzQuert(), child: const Text('Get with query')),
           ElevatedButton(onPressed: () =>Server().getSim(), child: const Text('GetSim')),
            ElevatedButton(onPressed: () =>Server().postSim(), child: const Text('PostSim')),
+           
         ],
       ),
     );
